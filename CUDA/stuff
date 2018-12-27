@@ -1,0 +1,18 @@
+
+
+  /*
+  initial_positions.get()[3*sizeX + 3] = 1;
+  initial_positions.get()[3*sizeX + 4] = 1;
+  initial_positions.get()[3*sizeX + 5] = 1;
+  initial_positions.get()[4*sizeX + 3] = 1;
+  initial_positions.get()[4*sizeX + 4] = 1;
+  initial_positions.get()[4*sizeX + 5] = 1;
+  */
+
+  /*
+  initial_positions.get()[3*sizeX + 3] = 1;
+  initial_positions.get()[3*sizeX + 4] = 1;
+  initial_positions.get()[3*sizeX + 5] = 1;
+  initial_positions.get()[4*sizeX + 5] = 1;
+  initial_positions.get()[5*sizeX + 4] = 1;
+  */
