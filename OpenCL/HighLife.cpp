@@ -5,13 +5,16 @@
 #include <math.h>
 #include <time.h>
 #include <omp.h>
+#include <chrono>
 #include <GL/glew.h>
 #include <CL/opencl.h>
 #include <GL/freeglut.h>
 #include <GL/glx.h>
 
-int sample_rate = 100000;
-
+int sample_rate = 10000;
+auto start = std::chrono::high_resolution_clock::now();
+auto finish = std::chrono::high_resolution_clock::now();
+std::chrono::duration<double> timelapse;
 
 // OpenGL variables for window and orthogonal matrix
 
@@ -254,10 +257,14 @@ void generationTimer(int value) {
 
     if(hl_generation % sample_rate == 0) {
         clock_t now = clock();
+        finish = std::chrono::high_resolution_clock::now();
+        timelapse = finish - start;
         double fps = (double)sample_rate / ( (now - life_clock) / CLOCKS_PER_SEC );
         printf("generation : %d\n", hl_generation);
         printf("fps = %lf\n", fps);
+        printf("timelapse between generation %d and %d: %lf miliseconds (%lf seconds)\n", hl_generation - sample_rate, hl_generation, timelapse.count() * 1000, timelapse.count());
         life_clock = now;
+        start = std::chrono::high_resolution_clock::now();
     }
 
     glutTimerFunc(0, generationTimer, 0);
