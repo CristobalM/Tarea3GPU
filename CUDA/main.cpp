@@ -59,11 +59,12 @@ int main() {
 
 void blockSizeExperimentsMain(){
   std::cout << "Block sizes experiment" << std::endl;
-  for(uint i = 1,  j = 32*i; j <=1024;i++, j = 32*i){
-    std::cout << "Block size = " << j << std::endl;
-    runExperimentsCuda_1(1, j);
-    std::cout << "Block size = " << j+1 << std::endl;
-    runExperimentsCuda_1(1, j+1);
+  std::vector<uint> blockSizes{32, 320, 512, 800, 1024};
+  for (auto blockSize : blockSizes) {
+    std::cout << "Block size = " << blockSize << std::endl;
+    runExperimentsCuda_1(1, blockSize);
+    std::cout << "Block size = " << blockSize +1 << std::endl;
+    runExperimentsCuda_1(1, blockSize +1);
   }
 }
 
