@@ -31,6 +31,7 @@ struct Params{
   uint threadNum;
   uint iterationsCount;
   uint iterationStartMeasuring;
+  uint maxBytesPerThread;
 };
 
 struct SimulationResult{
