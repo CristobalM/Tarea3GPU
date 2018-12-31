@@ -63,8 +63,13 @@ void blockSizeExperimentsMain(){
   for (auto blockSize : blockSizes) {
     std::cout << "Block size = " << blockSize << std::endl;
     runExperimentsCuda_1(1, blockSize);
-    std::cout << "Block size = " << blockSize +1 << std::endl;
-    runExperimentsCuda_1(1, blockSize +1);
+    uint compareTo;
+    if (blockSize < 1024)
+      compareTo = blockSize + 1;
+    else
+      compareTo = blockSize - 1;
+    std::cout << "Block size = " << compareTo << std::endl;
+    runExperimentsCuda_1(1, compareTo);
   }
 }
 
@@ -77,7 +82,7 @@ uint runExperiment(const uint sizeX, const uint sizeY,
 
   const uint threadNum = threadsPerBlock;
   const uint blockNum = std::min<uint>(32768, std::max<uint>(size/threadNum, 1));
-  const uint iterationsCount = 10000;
+  const uint iterationsCount = 100000;
 
   Params params = {
           .sizeX = sizeX,
