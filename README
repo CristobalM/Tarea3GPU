@@ -1,0 +1,26 @@
+
+
+Esta tarea se probó usando tarjetas NVidia.
+
+Para poder ejecutarla es necesario tener instalado la última versión de CUDA para la plataforma que se requiere.
+Para lograr esto se utiliza el instalador de la página oficial de NVidia, como esta en las siguientes instrucciones:
+
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal
+
+Este fue el caso para Ubuntu 18.04, en caso de requerirse otra versión solo hay que seleccionar otra plataforma en los botones.
+
+Es importante que el directorio base de CUDA quede en la dirección /usr/local/cuda-10.0/, de no ser así hay que especificarlo en
+el archivo CMakeLists.txt en la linea 5, donde por defecto viene:
+
+set(CUDA_TOOLKIT_ROOT_DIR /usr/local/cuda-10.0/)
+
+
+Para compilar la tarea hay que ejecutar los siguientes comandos en la carpeta base en la que se encuentran los directorios CUDA y OpenCL:
+
+mkdir -p build
+cd build
+cmake ..
+make
+
+Esto creara las carpetas CUDA y OpenCL en la carpeta build,
+ en las que estan contenidas los ejecutables correspondientes a la parte de CUDA y OpenCL respectivamente.
