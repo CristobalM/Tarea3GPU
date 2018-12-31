@@ -130,11 +130,11 @@ void runExperiments_1(const uint repeat, uint (*runAExperiment)(uint, uint, uint
 }
 
 void runExperimentsCuda_1(const uint repeat, const uint threadsPerBlock){
-  runExperiments_1(repeat, runExperimentCuda, 13, threadsPerBlock);
+  runExperiments_1(repeat, runExperimentCuda, 12, threadsPerBlock);
 };
 
 void runExperimentsCudaIfElse_1(const uint repeat, const uint threadsPerBlock){
-  runExperiments_1(repeat, runExperimentCudaIfElse, 13, threadsPerBlock);
+  runExperiments_1(repeat, runExperimentCudaIfElse, 12, threadsPerBlock);
 }
 
 void runExperimentsSeq_1(const uint repeat, const uint threadsPerBlock){
@@ -142,7 +142,7 @@ void runExperimentsSeq_1(const uint repeat, const uint threadsPerBlock){
 };
 
 void runExperimentsBitCuda_1(const uint repeat, const uint threadsPerBlock){
-  runExperiments_1(repeat, runExperimentBitCuda, 13, threadsPerBlock);
+  runExperiments_1(repeat, runExperimentBitCuda, 12, threadsPerBlock);
 };
 
 std::unique_ptr<uchar> createInitConfig(const uint sizeX, const uint sizeY, const uint discount){
