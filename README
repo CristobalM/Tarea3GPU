@@ -3,6 +3,7 @@
 Esta tarea se probó usando tarjetas NVidia.
 
 Para poder ejecutarla es necesario tener instalado la última versión de CUDA para la plataforma que se requiere.
+(Ojo que igual podria correr con otra version, como por ejemplo lo que viene en los repositorios de Ubuntu, pero esto es lo que se probo)
 Para lograr esto se utiliza el instalador de la página oficial de NVidia, como esta en las siguientes instrucciones:
 
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal

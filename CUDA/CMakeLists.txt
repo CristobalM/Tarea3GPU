@@ -12,6 +12,8 @@ cuda_add_library(cudalib SHARED
         defs.h)
 
 add_executable(Tarea3GPU main.cpp SequentialGameOfLife.cpp SequentialGameOfLife.h)
+add_executable(VisualizacionConsola ConsoleVisualization.cpp )
 target_link_libraries(Tarea3GPU cudalib ${CUDA_LIBRARIES})
+target_link_libraries(VisualizacionConsola cudalib ${CUDA_LIBRARIES})
 #string(APPEND CMAKE_CUDA_FLAGS " -gencode arch=compute_50,code=sm_50")
 #target_include_directories(Tarea3GPU_OpenCL PRIVATE OpenCL)

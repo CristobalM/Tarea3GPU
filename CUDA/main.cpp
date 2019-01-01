@@ -1,15 +1,19 @@
+//
+// Created by cristobal, 2018
+//
+
 #include <iostream>
-#include "GameOfLife.h"
-#include "defs.h"
 #include <algorithm>
 #include <chrono>
 #include <thread>
 #include <vector>
 
+#include "defs.h"
+#include "GameOfLife.h"
 #include "SequentialGameOfLife.h"
 
 
-static const uint DEFAULT_THREADS_PER_BLOCK = 1024;
+static const uint DEFAULT_THREADS_PER_BLOCK = 32;
 
 std::unique_ptr<uchar> createInitConfig(uint sizeX, uint sizeY, uint discount = 2);
 
@@ -53,6 +57,7 @@ int main() {
   std::cout << std::endl << std::endl;
 
   //testBitConversion();
+
 
   return 0;
 }
